@@ -59,6 +59,55 @@ html, body {
   z-index: 10;
 }
 
+.form-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+}
+
+.form-title span {
+  font-size: 22px;
+  color: #00ccff;
+  font-weight: 500;
+  display: block;
+  margin-top: 5px;
+}
+
+.betano-banner {
+  text-align: center;
+  margin: 30px auto;
+  background: #ff6600;
+  color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  max-width: 700px;
+}
+
+.betano-banner img {
+  max-width: 100px;
+  margin-bottom: 8px;
+}
+
+.classificacao-link {
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.classificacao-link a {
+  color: #00ccff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.classificacao-link a:hover {
+  text-decoration: underline;
+}
+
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -265,10 +314,17 @@ html, body {
   </div>
 
   <form id="fcpForm" enctype="multipart/form-data">
-    <h2>Previsão de Resultados - Mundial de Clubes</h2>
+    <h2 class="form-title">Arrisca-te a ganhar!<br><span>Faz a tua aposta 🔥</span></h2>
+    <div class="betano-banner">
+      <img src="https://brandlogo.org/wp-content/uploads/2024/08/Betano-Logo.png" alt="Betano" />
+      <p><strong>Participa com a tua aposta na Betano</strong><br>e habilita-te a ganhar uma camisola oficial do FC Porto!</p>
+    </div>
 
     <!-- Cartão de dados pessoais -->
     <div class="game-card">
+      <div class="classificacao-link">
+        🏆 <a href="https://docs.google.com/spreadsheets/d/TEU_ID/edit?usp=sharing" target="_blank">Ver classificação atual</a>
+      </div>
       <input type="text" name="nome" placeholder="Nome" required>
       <input type="email" name="email" placeholder="Email" required>
       <input type="text" name="betano" placeholder="Login Betano" required>
