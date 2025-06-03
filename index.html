@@ -49,14 +49,12 @@ html, body {
 
   .card-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
   border-radius: 16px;
   z-index: 10;
+  pointer-events: none;
 }
 
 .form-title {
@@ -301,6 +299,21 @@ html, body {
 
   @media (max-width: 600px) {
 
+    html, body {
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+
+.game-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
   .form-title {
     font-size: 24px;
   }
@@ -422,61 +435,41 @@ html, body {
   <button type="submit">Submeter Previsões</button>
   <br>
 
-  <!-- Jogo 2 -->
-  <div class="card-wrapper" style="position: relative;">
-    <div class="card-overlay"></div>
-    <div class="game-card">
-      <p class="jogo-titulo">JOGO 2</p>
-      <p class="jogo-info">19 JUNHO – 20H00 · Mercedes-Benz Stadium · Atlanta</p>
-      <div class="team-row">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/FC_Porto.svg/1200px-FC_Porto.svg.png" class="team-logo" alt="FCP">
-        <input type="text" name="golos_fcp2" class="score-input" placeholder="FCP">
-        <span style="color:#d4af37">vs</span>
-        <input type="text" name="golos_adv2" class="score-input" placeholder="MIA">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Inter_Miami_CF_logo.svg/1200px-Inter_Miami_CF_logo.svg.png" class="team-logo" alt="Miami">
-      </div>
-      <div class="marcador-upload-row">
-        <select name="marcador2">
-          <option value="">-- Marcador FCP --</option>
-          <option>Diogo Costa</option><option>Pepê</option><option>Grujić</option><option>Veron</option>
-          <option>Varela</option><option>Galeno</option><option>Taremi</option><option>Outros</option>
-        </select>
-        <div class="custom-file">
-          <label for="print2" class="file-label">📎 Escolher ficheiro</label>
-          <span class="file-name">Nenhum ficheiro selecionado</span>
-          <input type="file" id="print2" name="print2" class="file-input" onchange="updateFileName(this)">
-        </div>
-      </div>
-    </div>
+ <!-- Jogo 2 -->
+<div class="game-card" style="position: relative;">
+  <div class="card-overlay"></div>
+  <p class="jogo-titulo">JOGO 2</p>
+  <p class="jogo-info">19 JUNHO – 20H00 · Mercedes-Benz Stadium · Atlanta</p>
+  <div class="team-row">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/FC_Porto.svg/1200px-FC_Porto.svg.png" class="team-logo" alt="FCP">
+    <input type="text" name="golos_fcp2" class="score-input" placeholder="FCP">
+    <span style="color:#d4af37">vs</span>
+    <input type="text" name="golos_adv2" class="score-input" placeholder="MIA">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Inter_Miami_CF_logo.svg/1200px-Inter_Miami_CF_logo.svg.png" class="team-logo" alt="Miami">
   </div>
+  <div class="marcador-upload-row">
+    <select name="marcador2">...</select>
+    <div class="custom-file">...</div>
+  </div>
+</div>
 
-  <!-- Jogo 3 -->
-  <div class="card-wrapper" style="position: relative;">
-    <div class="card-overlay"></div>
-    <div class="game-card">
-      <p class="jogo-titulo">JOGO 3</p>
-      <p class="jogo-info">24 JUNHO – 02H00 · MetLife Stadium · New Jersey</p>
-      <div class="team-row">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/FC_Porto.svg/1200px-FC_Porto.svg.png" class="team-logo" alt="FCP">
-        <input type="text" name="golos_fcp3" class="score-input" placeholder="FCP">
-        <span style="color:#d4af37">vs</span>
-        <input type="text" name="golos_adv3" class="score-input" placeholder="AHLY">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Al_Ahly_SC_logo.svg/640px-Al_Ahly_SC_logo.svg.png" class="team-logo" alt="Al-Ahly">
-      </div>
-      <div class="marcador-upload-row">
-        <select name="marcador3">
-          <option value="">-- Marcador FCP --</option>
-          <option>Diogo Costa</option><option>Pepê</option><option>Grujić</option><option>Veron</option>
-          <option>Varela</option><option>Galeno</option><option>Taremi</option><option>Outros</option>
-        </select>
-        <div class="custom-file">
-          <label for="print3" class="file-label">📎 Escolher ficheiro</label>
-          <span class="file-name">Nenhum ficheiro selecionado</span>
-          <input type="file" id="print3" name="print3" class="file-input" onchange="updateFileName(this)">
-        </div>
-      </div>
-    </div>
+<!-- Jogo 3 -->
+<div class="game-card" style="position: relative;">
+  <div class="card-overlay"></div>
+  <p class="jogo-titulo">JOGO 3</p>
+  <p class="jogo-info">24 JUNHO – 02H00 · MetLife Stadium · New Jersey</p>
+  <div class="team-row">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/FC_Porto.svg/1200px-FC_Porto.svg.png" class="team-logo" alt="FCP">
+    <input type="text" name="golos_fcp3" class="score-input" placeholder="FCP">
+    <span style="color:#d4af37">vs</span>
+    <input type="text" name="golos_adv3" class="score-input" placeholder="AHLY">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Al_Ahly_SC_logo.svg/640px-Al_Ahly_SC_logo.svg.png" class="team-logo" alt="Al-Ahly">
   </div>
+  <div class="marcador-upload-row">
+    <select name="marcador3">...</select>
+    <div class="custom-file">...</div>
+  </div>
+</div>
   
 </form>
 
