@@ -298,21 +298,17 @@ html, body {
   }
 
   @media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px 16px;
+    box-sizing: border-box;
+  }
 
-    html, body {
-  overflow-x: hidden;
-}
-
-.container {
-  padding: 20px 10px;
-  box-sizing: border-box;
-}
-
-.game-card {
-  width: 100%;
-  box-sizing: border-box;
-}
-
+  form {
+    width: 100%;
+  }
 
   .form-title {
     font-size: 24px;
@@ -335,14 +331,13 @@ html, body {
     font-size: 13px;
   }
 
-
   .game-card {
     padding: 16px;
     margin: 16px 0;
   }
 
   .team-row {
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -360,7 +355,8 @@ html, body {
     height: 50px;
   }
 
-  select, input[type="file"] {
+  select,
+  input[type="file"] {
     font-size: 15px;
   }
 
@@ -368,6 +364,7 @@ html, body {
     flex-direction: column;
   }
 }
+
 
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
