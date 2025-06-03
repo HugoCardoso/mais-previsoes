@@ -280,9 +280,9 @@ html, body {
     <p class="jogo-info">15 JUNHO – 23H00 · MetLife Stadium · New Jersey</p>
     <div class="team-row">
       <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/FC_Porto.svg/1200px-FC_Porto.svg.png" class="team-logo" alt="FCP">
-      <input type="text" name="golos_fcp1" class="score-input" placeholder="FCP">
+      <input type="text" name="golos_fcp1" class="score-input" placeholder="FCP" min="0" max="9" required>
       <span style="color:#d4af37">vs</span>
-      <input type="text" name="golos_adv1" class="score-input" placeholder="PAL">
+      <input type="text" name="golos_adv1" class="score-input" placeholder="PAL" min="0" max="9" required>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/800px-Palmeiras_logo.svg.png" class="team-logo" alt="Palmeiras">
     </div>
     <div class="marcador-upload-row">
@@ -298,6 +298,15 @@ html, body {
       </div>
     </div>
   </div>
+
+  <div style="margin-top: 20px;">
+    <input type="checkbox" id="termos" name="termos" required>
+    <label for="termos" style="font-size: 14px; display: inline;">
+      Confirmo que li e aceito os <a href="https://maisfcporto.com/termos" target="_blank" style="color:#00ccff;"><strong>Termos e Condições</strong></a> deste passatempo.
+      Os dados recolhidos serão utilizados exclusivamente para efeitos desta ação e serão eliminados após o seu término.
+    </label>
+  </div>
+  <button type="submit">Submeter Previsões</button>
 
   <!-- Jogo 2 -->
   <div class="card-wrapper" style="position: relative;">
@@ -354,14 +363,7 @@ html, body {
       </div>
     </div>
   </div>
-  <div style="margin-top: 20px;">
-    <input type="checkbox" id="termos" name="termos" required>
-    <label for="termos" style="font-size: 14px; display: inline;">
-      Confirmo que li e aceito os <a href="https://maisfcporto.com/termos" target="_blank" style="color:#00ccff;"><strong>Termos e Condições</strong></a> deste passatempo.
-      Os dados recolhidos serão utilizados exclusivamente para efeitos desta ação e serão eliminados após o seu término.
-    </label>
-  </div>
-  <button type="submit">Submeter Previsões</button>
+  
 </form>
 
 <div class="sponsor-banner">
