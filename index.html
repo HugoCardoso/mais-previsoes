@@ -270,7 +270,8 @@ html, body {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+
 }
 
 .file-label:hover {
@@ -433,10 +434,10 @@ html, body {
         <option>Varela</option><option>Galeno</option><option>Taremi</option><option>Outros</option>
       </select>
       <div class="custom-file">
-        <label for="print1" class="file-label">📎 Escolher ficheiro</label>
-        <span class="file-name">Nenhum ficheiro selecionado</span>
-        <input type="file" id="print1" name="print1" class="file-input" onchange="updateFileName(this)">
+        <label for="print1" class="file-label" id="label-print1">📎 Escolher ficheiro</label>
+        <input type="file" id="print1" name="print1" class="file-input" onchange="updateLabel(this)">
       </div>
+      
     </div>
   </div>
 
@@ -550,6 +551,18 @@ html, body {
       reader.onerror = reject;
       reader.readAsDataURL(file);
     });
+  }
+
+  function updateLabel(input) {
+  const label = document.querySelector(`label[for="${input.id}"]`);
+  if (input.files && input.files.length > 0) {
+    label.textContent = "✅ Ficheiro anexado";
+    label.style.backgroundColor = "#00aa44";
+    label.style.color = "#ffffff";
+  } else {
+    label.textContent = "📎 Escolher ficheiro";
+    label.style.backgroundColor = "#00ccff";
+    label.style.color = "#00154c";
   }
   </script>
   
