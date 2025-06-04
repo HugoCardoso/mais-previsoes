@@ -487,6 +487,11 @@ html, body {
   
 </form>
 
+<div id="agradecimento" style="display:none; text-align:center; padding:40px 20px;">
+  <h2 style="color:#00ccff; font-size:24px;">✅ Participação registada com sucesso!</h2>
+  <p style="color:#fff; font-size:16px; margin-top:10px;">Obrigado por participares. Boa sorte! 🍀</p>
+</div>
+
 <div class="betano-logo">
   <img src="https://brandlogo.org/wp-content/uploads/2024/08/Betano-Logo.png" alt="Betano Patrocínio">
 </div>
@@ -531,8 +536,9 @@ html, body {
   })
   .then(response => {
     if (response.ok) {
-      alert("Previsões submetidas com sucesso!");
       form.reset();
+      form.style.display = "none";
+      document.getElementById("agradecimento").style.display = "block";
     } else {
       alert("Erro ao submeter.");
       submitButton.disabled = false;
