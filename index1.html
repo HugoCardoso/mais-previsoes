@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>Previsões +FC Porto</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(to bottom, #00154c, #000a2d);
+                color: #ffffff;
+                font-family: "Poppins", sans-serif;
+                width: 100%;
+            }
+
+            header {
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            header img.logo {
+                max-width: 220px;
+                max-height: 75px;
+            }
+
+            .form-wrapper {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .dazn-banner {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .dazn-banner-img {
+                width: 100%;
+                border-radius: 12px;
+                margin-bottom: 12px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .pill-banner {
+                display: inline-block;
+                background-color: #ffea00;
+                color: #000;
+                padding: 10px 20px;
+                border-radius: 999px;
+                font-weight: bold;
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+
+            .substep {
+                font-size: 18px;
+                margin-top: 8px;
+                display: inline-block;
+            }
+
+            .input-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+                background: linear-gradient(to right, #002f7f, #007bff);
+                padding: 1rem;
+                border-radius: 12px;
+                margin-bottom: 20px;
+            }
+
+            .input-row input {
+                flex: 1 1 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 6px;
+                font-size: 14px;
+                font-weight: 500;
+                background-color: #fff;
+                color: #00154c;
+            }
+
+            @media (min-width: 601px) {
+                .input-row input {
+                    flex: 1;
+                }
+            }
+
+            .form-section {
+                width: 100%;
+            }
+
+            .game-card {
+                background: linear-gradient(135deg, #004aad, #007bff);
+                border-radius: 20px;
+                padding: 2rem;
+                margin-bottom: 20px;
+                color: #fff;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            }
+
+            .match-info {
+                text-align: center;
+                font-size: 0.95rem;
+                color: #ffea00;
+                margin-bottom: 1.5rem;
+            }
+
+            .game-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            .teams-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .team-block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .score-boxes {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .vs-text {
+                font-weight: bold;
+                font-size: 1rem;
+                margin: 0 1rem;
+            }
+
+            .team-logo {
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                background: white;
+                padding: 4px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            .score-input {
+                width: 60px;
+                height: 40px;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 10px;
+                border: none;
+                box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+                background-color: #fff;
+                color: #00154c;
+            }
+
+            .scorer-input {
+                width: 100%;
+                padding: 12px;
+                border-radius: 8px;
+                border: none;
+                font-size: 1rem;
+                color: #00154c;
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+                margin-top: 10px;
+            }
+
+            .terms {
+                margin-top: 20px;
+                font-size: 14px;
+            }
+
+            .terms a {
+                color: #00ccff;
+                text-decoration: none;
+            }
+
+            .terms a:hover {
+                text-decoration: underline;
+            }
+
+            button[type="submit"] {
+                background: #00ccff;
+                color: #00154c;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+                margin: 20px auto 0;
+                display: block;
+                transition: background 0.3s;
+            }
+
+            button[type="submit"]:hover {
+                background: #0099cc;
+            }
+
+            @media (max-width: 600px) {
+                .teams-row {
+                    flex-direction: column;
+                }
+
+                .score-boxes {
+                    flex-direction: column;
+                }
+
+                .vs-text {
+                    margin: 0.5rem 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="https://instagram.com/maisfcporto" target="_blank">
+                <img
+                    src="https://maisfcporto.com/wp-content/uploads/2023/12/logobranco-1.png"
+                    alt="MaisFCPorto"
+                    class="logo" />
+            </a>
+            <a href="https://dazn.prf.hn/click/camref:1011l5ccat" target="_blank">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/DAZN_Logo_Chalk.svg/400px-DAZN_Logo_Chalk.svg.png"
+                    alt="dazn Patrocínio"
+                    class="logo" />
+            </a>
+        </header>
+
+        <div class="form-wrapper">
+            <form id="fcpForm">
+                <div class="dazn-banner">
+                    <img
+                        src="https://images.daznservices.com/di/library/DAZN_News/2/92/1nb66fe7eumy01c3hm07080d7rimagehero16x9_1nb66fe7eumy01c3hm07080d7r_IMAGE_HERO_16x9.jpg?t=1028134679"
+                        alt="DAZN Banner"
+                        class="dazn-banner-img" />
+                    <p>
+                        <span class="pill-banner"><b>1.</b> Regista-te gratuitamente na DAZN</span><br />
+                        <span class="substep"
+                            ><b>2.</b> Faz o teu prognóstico e habilita-te a ganhar uma camisola oficial do FC
+                            Porto!</span
+                        >
+                    </p>
+                </div>
+
+                <div class="form-section">
+                    <div class="input-row">
+                        <input type="text" name="nome" placeholder="Nome" required />
+                        <input type="email" name="email" placeholder="Email" required />
+                    </div>
+
+                    <div class="game-card">
+                        <div class="match-info">
+                            <h3 class="game-title">JOGO 1</h3>
+                            <p>15 JUNHO – 23H00 · MetLife Stadium · New Jersey</p>
+                        </div>
+
+                        <div class="teams-row">
+                            <!-- Logo FC Porto -->
+                            <div class="team-block">
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/FC_Porto.svg/1200px-FC_Porto.svg.png"
+                                    alt="FCP"
+                                    class="team-logo" />
+                            </div>
+
+                            <!-- Resultados -->
+                            <div class="score-boxes">
+                                <input type="number" name="golos_fcp1" class="score-input" placeholder="FCP" />
+                                <span class="vs-text">vs</span>
+                                <input type="number" name="golos_adv1" class="score-input" placeholder="PAL" />
+                            </div>
+
+                            <!-- Logo Palmeiras -->
+                            <div class="team-block">
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/800px-Palmeiras_logo.svg.png"
+                                    alt="PAL"
+                                    class="team-logo" />
+                            </div>
+                        </div>
+
+                        <select name="marcador1" class="scorer-input" required>
+                            <option value="" disabled selected hidden>Escolher marcador FCP</option>
+                            <option>Alan Varela</option>
+                            <option>Ángel Alarcón</option>
+                            <option>André Franco</option>
+                            <option>André Oliveira</option>
+                            <option>Cláudio Ramos</option>
+                            <option>Danny Namaso</option>
+                            <option>Deniz Gul</option>
+                            <option>Diogo Costa</option>
+                            <option>Diogo Fernandes</option>
+                            <option>Eustaquio</option>
+                            <option>Fábio Vieira</option>
+                            <option>Francisco Moura</option>
+                            <option>Gabriel Brás</option>
+                            <option>Gabri Veiga</option>
+                            <option>Gonçalo Borges</option>
+                            <option>João Mário</option>
+                            <option>Marcano</option>
+                            <option>Martim Fernandes</option>
+                            <option>Nehuén Pérez</option>
+                            <option>Otavio</option>
+                            <option>Pepê</option>
+                            <option>Rodrigo Mora</option>
+                            <option>Samu</option>
+                            <option>Tomás Pérez</option>
+                            <option>Vasco Sousa</option>
+                            <option>Zé Pedro</option>
+                            <option>Zaidu</option>
+                            <option>Nenhuma destas opções</option>
+                        </select>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="match-info">
+                            <h3 class="game-title">JOGO 2</h3>
+                            <p>19 JUNHO – 20H00 · Mercedes-Benz Stadium · Atlanta</p>
+                        </div>
+
+                        <div class="teams-row">
+                            <!-- Logo FC Porto -->
+                            <div class="team-block">
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/FC_Porto.svg/1200px-FC_Porto.svg.png"
+                                    alt="FCP"
+                                    class="team-logo" />
+                            </div>
+
+                            <!-- Resultados -->
+                            <div class="score-boxes">
+                                <input type="number" name="golos_fcp2" class="score-input" placeholder="FCP" />
+                                <span class="vs-text">vs</span>
+                                <input type="number" name="golos_adv2" class="score-input" placeholder="MIA" />
+                            </div>
+
+                            <!-- Logo MIAMI -->
+                            <div class="team-block">
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Inter_Miami_CF_logo.svg/1200px-Inter_Miami_CF_logo.svg.png"
+                                    alt="MIA"
+                                    class="team-logo" />
+                            </div>
+                        </div>
+
+                        <select name="marcador2" class="scorer-input" required>
+                            <option value="" disabled selected hidden>Escolher marcador FCP</option>
+                            <option>Alan Varela</option>
+                            <option>Ángel Alarcón</option>
+                            <option>André Franco</option>
+                            <option>André Oliveira</option>
+                            <option>Cláudio Ramos</option>
+                            <option>Danny Namaso</option>
+                            <option>Deniz Gul</option>
+                            <option>Diogo Costa</option>
+                            <option>Diogo Fernandes</option>
+                            <option>Eustaquio</option>
+                            <option>Fábio Vieira</option>
+                            <option>Francisco Moura</option>
+                            <option>Gabriel Brás</option>
+                            <option>Gabri Veiga</option>
+                            <option>Gonçalo Borges</option>
+                            <option>João Mário</option>
+                            <option>Marcano</option>
+                            <option>Martim Fernandes</option>
+                            <option>Nehuén Pérez</option>
+                            <option>Otavio</option>
+                            <option>Pepê</option>
+                            <option>Rodrigo Mora</option>
+                            <option>Samu</option>
+                            <option>Tomás Pérez</option>
+                            <option>Vasco Sousa</option>
+                            <option>Zé Pedro</option>
+                            <option>Zaidu</option>
+                            <option>Nenhuma destas opções</option>
+                        </select>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="match-info">
+                            <h3 class="game-title">JOGO 3</h3>
+                            <p>24 JUNHO – 02H00 · MetLife Stadium · New Jersey</p>
+                        </div>
+
+                        <div class="teams-row">
+                            <!-- Logo FC Porto -->
+                            <div class="team-block">
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/FC_Porto.svg/1200px-FC_Porto.svg.png"
+                                    alt="FCP"
+                                    class="team-logo" />
+                            </div>
+
+                            <!-- Resultados -->
+                            <div class="score-boxes">
+                                <input type="number" name="golos_fcp3" class="score-input" placeholder="FCP" />
+                                <span class="vs-text">vs</span>
+                                <input type="number" name="golos_adv3" class="score-input" placeholder="AHL" />
+                            </div>
+
+                            <!-- Logo AL-Ahly -->
+                            <div class="team-block">
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Al_Ahly_SC_logo.svg/640px-Al_Ahly_SC_logo.svg.png"
+                                    alt="AHL"
+                                    class="team-logo" />
+                            </div>
+                        </div>
+
+                        <select name="marcador1" class="scorer-input" required>
+                            <option value="" disabled selected hidden>Escolher marcador FCP</option>
+                            <option>Alan Varela</option>
+                            <option>Ángel Alarcón</option>
+                            <option>André Franco</option>
+                            <option>André Oliveira</option>
+                            <option>Cláudio Ramos</option>
+                            <option>Danny Namaso</option>
+                            <option>Deniz Gul</option>
+                            <option>Diogo Costa</option>
+                            <option>Diogo Fernandes</option>
+                            <option>Eustaquio</option>
+                            <option>Fábio Vieira</option>
+                            <option>Francisco Moura</option>
+                            <option>Gabriel Brás</option>
+                            <option>Gabri Veiga</option>
+                            <option>Gonçalo Borges</option>
+                            <option>João Mário</option>
+                            <option>Marcano</option>
+                            <option>Martim Fernandes</option>
+                            <option>Nehuén Pérez</option>
+                            <option>Otavio</option>
+                            <option>Pepê</option>
+                            <option>Rodrigo Mora</option>
+                            <option>Samu</option>
+                            <option>Tomás Pérez</option>
+                            <option>Vasco Sousa</option>
+                            <option>Zé Pedro</option>
+                            <option>Zaidu</option>
+                            <option>Nenhuma destas opções</option>
+                        </select>
+                    </div>
+
+                    <div class="terms">
+                        <input type="checkbox" id="termos" name="termos" required />
+                        <label for="termos">
+                            Confirmo que li e aceito os
+                            <a href="https://hugocardoso.github.io/mais-previsoes/termos" target="_blank"
+                                ><strong>Termos e Condições</strong></a
+                            >
+                            deste passatempo.
+                        </label>
+                    </div>
+
+                    <button type="submit">Submeter Previsões</button>
+                </div>
+            </form>
+
+            <div id="agradecimento" style="display: none; text-align: center; padding: 40px 20px">
+                <h2 style="color: #00ccff; font-size: 24px">✅ Participação registada com sucesso!</h2>
+                <p style="color: #fff; font-size: 16px; margin-top: 10px">Obrigado por participares. Boa sorte! 🍀</p>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    document.getElementById("fcpForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = "A enviar...";
+
+        const formData = new FormData(form);
+        const data = {};
+
+        for (let [key, value] of formData.entries()) {
+            if (!key.startsWith("print")) {
+                data[key] = value;
+            }
+        }
+
+        for (let i = 1; i <= 3; i++) {
+            const fileInput = form.querySelector(`input[name=print${i}]`);
+            if (fileInput && fileInput.files.length > 0) {
+                const base64 = await toBase64(fileInput.files[0]);
+                data[`print${i}`] = base64;
+            }
+        }
+
+        const encoded = new URLSearchParams(data).toString();
+
+        fetch(
+            "https://script.google.com/macros/s/AKfycbwZLnm6bcTbzBxsSYdqA8szy3dDocb-ZmLbG6LXucJUZekMHz--MMFxL1Jnlr2x_SV7/exec",
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encoded
+            }
+        )
+            .then((response) => {
+                if (response.ok) {
+                    form.reset();
+                    form.style.display = "none";
+                    document.getElementById("agradecimento").style.display = "block";
+                } else {
+                    alert("Erro ao submeter.");
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Submeter Previsões";
+                }
+            })
+            .catch((error) => {
+                alert("Erro de rede.");
+                console.error(error);
+                submitButton.disabled = false;
+                submitButton.textContent = "Submeter Previsões";
+            });
+    });
+
+    function toBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+                const base64 = reader.result.split(",")[1];
+                resolve(base64);
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    }
+
+    function updateLabel(input) {
+        const label = document.querySelector(`label[for="${input.id}"]`);
+        if (input.files && input.files.length > 0) {
+            label.textContent = "✅ Ficheiro anexado";
+            label.style.backgroundColor = "#00aa44";
+            label.style.color = "#ffffff";
+        } else {
+            label.textContent = "📎 Escolher ficheiro";
+            label.style.backgroundColor = "#00ccff";
+            label.style.color = "#00154c";
+        }
+    }
+</script>
