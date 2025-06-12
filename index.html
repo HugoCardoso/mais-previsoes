@@ -617,8 +617,8 @@
     <div class="form-section">
       <!-- dados pessoais -->
       <div class="input-row">
-        <input type="text" placeholder="Nome" required />
-        <input type="email" placeholder="Email" required />
+        <input type="text" name="nome" placeholder="Nome" required />
+        <input type="email" name="email" placeholder="Email" required />
       </div>
 
       <!-- Jogo 1 -->
@@ -699,7 +699,7 @@
             class="team-logo" />
         </div>
         <div class="marcador-upload-row">
-          <select name="marcador1" required>
+          <select name="marcador2" required>
             <option value="" disabled selected hidden>Escolher marcador FCP</option>
             <option>Alan Varela</option>
             <option>Ángel Alarcón</option>
@@ -755,7 +755,7 @@
             class="team-logo" />
         </div>
         <div class="marcador-upload-row">
-          <select name="marcador1" required>
+          <select name="marcador3" required>
             <option value="" disabled selected hidden>Escolher marcador FCP</option>
             <option>Alan Varela</option>
             <option>Ángel Alarcón</option>
@@ -787,6 +787,7 @@
           </select>
         </div>
       </div>
+      
       <div style="margin-top: 20px">
         <input type="checkbox" id="termos" name="termos" required />
         <label for="termos" style="font-size: 14px; display: inline">
@@ -801,12 +802,12 @@
       <button type="submit">Submeter Previsões</button>
       <br />
     </div>
-
-
-  <div id="agradecimento" style="display: none; text-align: center; padding: 40px 20px">
-    <h2 style="color: #00ccff; font-size: 24px">✅ Participação registada com sucesso!</h2>
-    <p style="color: #fff; font-size: 16px; margin-top: 10px">Obrigado por participares. Boa sorte! 🍀</p>
-  </div>
+      </form>
+      <div id="agradecimento" style="display: none; text-align: center; padding: 40px 20px">
+        <h2 style="color: #00ccff; font-size: 24px">✅ Participação registada com sucesso!</h2>
+        <p style="color: #fff; font-size: 16px; margin-top: 10px">Obrigado por participares. Boa sorte! 🍀</p>
+      </div>
+    
 
   <script>
     document.getElementById("fcpForm").addEventListener("submit", async function (e) {
