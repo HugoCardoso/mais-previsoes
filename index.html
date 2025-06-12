@@ -551,16 +551,36 @@
     }
 
     .teams-row {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-    .teams-row .score-input {
-  width: 50px;
-  height: 40px;
+.teams-row > * {
+  flex: 1 1 auto;
+  max-width: 20%;
+  text-align: center;
+}
+
+.teams-row .score-input {
+  max-width: 50px;
+  flex: 0 0 auto;
+}
+
+.teams-row .vs-text {
+  flex: 0 0 auto;
+  font-size: 14px;
+}
+
+.teams-row .team-logo {
+  max-width: 50px;
+  max-height: 50px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .team-logo {
